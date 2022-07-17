@@ -51,37 +51,37 @@
 
     default_layer {
       bindings = <
-        &kp Q       &kp D    &kp R       &kp W       &kp B         &kp J         &kp F       &kp U       &kp P    &kp COLON
-        &kp A       &kp S    &hm LALT H  &hm LGUI T  &kp G         &kp Y         &hm RGUI N  &hm RALT E  &kp O    &kp I
-        &mt LSFT Z  &kp X    &kp M       &kp C       &kp V         &kp K         &kp L       &kp CMMA    &kp DOT  &kp SQT
-                                         &sk LCTL    &sk LSHIFT    &td SPC BSPC  &to SYMBOL
+        &kp Q         &kp D    &kp R       &kp W       &kp B         &kp J           &kp F       &kp U       &kp P    &kp COLON
+        &kp A         &kp S    &hm LALT H  &hm LGUI T  &kp G         &kp Y           &hm RGUI N  &hm RALT E  &kp O    &kp I
+        &mt LSHIFT Z  &kp X    &kp M       &kp C       &kp V         &kp K           &kp L       &kp COMMA    &kp DOT  &kp SQT
+                                           &sk LCTRL   &sk LSHIFT    &td SPACE BSPC  &to SYMBOL
       >;
     };
 
     symbol_layer {
       bindings = <
-        &kp ESC     &kp PLUS   &td MINUS  &kp UNDER  &kp GRAVE     &kp SQT   &kp N4  &kp N5  &kp N6  &kp BSPC
-        &kp TAB     &kp EQUAL  &kp QMARK  &kp LPAR   &kp RPAR      &kp N0    &kp N1  &kp N2  &kp N3  &kp ENTER
-        &kp TILDE   &kp LT     &kp GT     &kp LBKT   &kp RBKT      &kp FSLH  &kp N7  &kp N8  &kp N9  &kp CAPS
-                                          &sk LCTL   &sk LSHIFT    &to DEFAULT  &to NAV
+        &kp ESC     &kp PLUS   &td MINUS  &kp UNDER  &kp GRAVE     &kp SQT      &kp N4  &kp N5  &kp N6  &kp BSPC
+        &kp TAB     &kp EQUAL  &kp QMARK  &kp LPAR   &kp RPAR      &kp N0       &kp N1  &kp N2  &kp N3  &kp ENTER
+        &kp TILDE   &kp LT     &kp GT     &kp LBKT   &kp RBKT      &kp FSLH     &kp N7  &kp N8  &kp N9  &kp CAPS
+                                          &sk LCTRL  &sk LSHIFT    &to DEFAULT  &to NAV
       >;
     };
 
     navigation_layer {
       bindings = <
-        &bt BT_NXT  &kp C_PREV    &kp C_NEXT    &kp C_PP  &kp F11      &trans  &trans    &trans    &trans  &trans
-        &bt BT_PRV  &kp C_VOL_DN  &kp C_VOL_UP  &kp F1    &kp F5       &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
-        &bt BT_CLR  &kp C_BRI_UP  &kp C_BRI_DN  &kp F8    &kp F10      &trans  &trans    &trans    &trans  &reset
-                                                &sk LCTL  &sk LSHIFT   &to DEFAULT  &to QWERTY
+        &bt BT_NXT  &kp C_PREV    &kp C_NEXT    &kp C_PP   &kp F11      &trans       &trans    &trans    &trans  &trans
+        &bt BT_PRV  &kp C_VOL_DN  &kp C_VOL_UP  &kp F1     &kp F5       &trans       &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
+        &bt BT_CLR  &kp C_BRI_UP  &kp C_BRI_DN  &kp F8     &kp F10      &trans       &trans    &trans    &trans  &reset
+                                                &sk LCTRL  &sk LSHIFT   &to DEFAULT  &to QWERTY
       >;
     };
 
     qwerty_layer {
       bindings = <
-        &kp Q       &kp W    &kp E       &kp R       &kp T         &kp Y         &kp U       &kp I       &kp O    &kp P
-        &kp A       &kp S    &hm LALT D  &hm LGUI F  &kp G         &kp H         &hm RGUI J  &hm RALT K  &kp L    &kp COLON
-        &mt LSFT Z  &kp X    &kp C       &kp V       &kp B         &kp N         &kp M       &kp CMMA    &kp DOT  &kp SQT
-                                         &sk LCTL    &sk LSHIFT    &td SPC BSPC  &to SYMBOL
+        &kp Q         &kp W    &kp E       &kp R       &kp T         &kp Y           &kp U       &kp I       &kp O    &kp P
+        &kp A         &kp S    &hm LALT D  &hm LGUI F  &kp G         &kp H           &hm RGUI J  &hm RALT K  &kp L    &kp COLON
+        &mt LSHIFT Z  &kp X    &kp C       &kp V       &kp B         &kp N           &kp M       &kp COMMA    &kp DOT  &kp SQT
+                                           &sk LCTRL   &sk LSHIFT    &td SPACE BSPC  &to SYMBOL
       >;
     };
 
