@@ -77,7 +77,7 @@
     navigation_layer {
       bindings = <
         &bt BT_NXT  &kp C_PREV    &kp C_NEXT    &kp C_PP   &kp F11      &none        &none     &none     &none      &none
-        &bt BT_PRV  &kp C_VOL_DN  &kp C_VOL_UP  &kp F1     &kp F5       &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT  &none RIGHT
+        &bt BT_PRV  &kp C_VOL_DN  &kp C_VOL_UP  &kp F1     &kp F5       &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT  &none
         &bt BT_CLR  &kp C_BRI_UP  &kp C_BRI_DN  &kp F8     &kp F10      &none        &none     &none     &none      &reset
                                                 &kp LCTRL  &kp LSHIFT   &to DEFAULT  &none
       >;
