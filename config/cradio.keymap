@@ -11,8 +11,15 @@
 #define DEFAULT 0
 #define SYMBOL 1
 #define NAV 2
-#define QWERTY 3
 
+/*                KEY POSITIONS
+
+            ╭────────────────────╮ ╭────────────────────╮
+            │  0   1   2   3   4 │ │  5   6   7   8   9 │
+            │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
+            │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
+            ╰───────────╮ 30  31 │ │ 32  33 ╭───────────╯
+                        ╰────────╯ ╰────────╯            */
 
 &mt {
     flavor = "tap-preferred";
@@ -54,7 +61,7 @@
         &kp Q         &kp D    &kp R       &kp W       &kp B         &kp J      &kp F       &kp U       &kp P    &kp SEMI
         &kp A         &kp S    &hm LALT H  &hm LGUI T  &kp G         &kp Y      &hm RGUI N  &hm RALT E  &kp O    &kp I
         &mt LSHIFT Z  &kp X    &kp M       &kp C       &kp V         &kp K      &kp L       &kp COMMA   &kp DOT  &kp SQT
-                                           &sk LCTRL   &sk LSHIFT    &kp SPACE  &to SYMBOL
+                                           &kp LCTRL   &kp LSHIFT    &kp SPACE  &to SYMBOL
       >;
     };
 
@@ -63,16 +70,16 @@
         &kp ESC     &kp PLUS   &kp MINUS       &kp UNDER      &kp GRAVE     &kp SQT      &kp N4       &kp N5       &kp N6  &kp BSPC
         &kp TAB     &kp EQUAL  &hm LALT QMARK  &hm LGUI LPAR  &kp RPAR      &kp N0       &hm RGUI N1  &hm RALT N2  &kp N3  &kp ENTER
         &kp TILDE   &kp LT     &kp GT          &kp LBKT       &kp RBKT      &kp FSLH     &kp N7       &kp N8       &kp N9  &kp CAPS
-                                               &sk LCTRL      &sk LSHIFT    &to DEFAULT  &to NAV
+                                               &kp LCTRL      &kp LSHIFT    &to DEFAULT  &to NAV
       >;
     };
 
     navigation_layer {
       bindings = <
-        &bt BT_NXT  &kp C_PREV    &kp C_NEXT    &kp C_PP   &kp F11      &trans       &trans    &trans    &trans     &trans
-        &bt BT_PRV  &kp C_VOL_DN  &kp C_VOL_UP  &kp F1     &kp F5       &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT  &trans RIGHT
-        &bt BT_CLR  &kp C_BRI_UP  &kp C_BRI_DN  &kp F8     &kp F10      &trans       &trans    &trans    &trans     &reset
-                                                &sk LCTRL  &sk LSHIFT   &to DEFAULT  &to QWERTY
+        &bt BT_NXT  &kp C_PREV    &kp C_NEXT    &kp C_PP   &kp F11      &none        &none     &none     &none      &none
+        &bt BT_PRV  &kp C_VOL_DN  &kp C_VOL_UP  &kp F1     &kp F5       &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT  &none RIGHT
+        &bt BT_CLR  &kp C_BRI_UP  &kp C_BRI_DN  &kp F8     &kp F10      &none        &none     &none     &none      &reset
+                                                &kp LCTRL  &kp LSHIFT   &to DEFAULT  &none
       >;
     };
   };
