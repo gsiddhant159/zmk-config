@@ -13,21 +13,22 @@
 #define NAV 2
 
 /*                KEY POSITIONS
-
-            ╭────────────────────╮ ╭────────────────────╮
-            │  0   1   2   3   4 │ │  5   6   7   8   9 │
-            │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
-            │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
-            ╰───────────╮ 30  31 │ │ 32  33 ╭───────────╯
-                        ╰────────╯ ╰────────╯            */
+ *
+ *          ╭────────────────────╮ ╭────────────────────╮
+ *          │  0   1   2   3   4 │ │  5   6   7   8   9 │
+ *          │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
+ *          │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
+ *          ╰───────────╮ 30  31 │ │ 32  33 ╭───────────╯
+ *                      ╰────────╯ ╰────────╯           
+ */
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <300>;
+    tapping_term_ms = <250>;
 };
 
 &mmv {
-   time-to-max-speed-ms = <680>;
+   time-to-max-speed-ms=<680>;
    acceleration-exponent=<2>;
 };
 
@@ -79,9 +80,8 @@
         &bt BT_CLR    &kp C_PREV    &kp C_NEXT    &kp C_PP    &none       &kp F1       &kp F2    &kp F5   &kp F12    &none
         &bt BT_SEL 0  &kp C_VOL_DN  &kp C_VOL_UP  &none       &none       &kp LEFT     &kp DOWN  &kp UP   &kp RIGHT  &none
         &bt BT_SEL 1  &kp C_BRI_UP  &kp C_BRI_DN  &none       &none       &none        &kp F10   &kp F11  &none      &reset
-																								&kp LSHIFT  &none       &to DEFAULT  &kp RCTRL
+                                                  &kp LSHIFT  &none       &to DEFAULT  &kp RCTRL
       >;
     };
   };
 };
-
