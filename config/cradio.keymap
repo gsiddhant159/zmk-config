@@ -37,7 +37,7 @@
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS";
       #binding-cells = <2>;
-      tapping-term-ms = <300>;
+      tapping-term-ms = <250>;
       quick_tap_ms = <0>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
@@ -46,7 +46,7 @@
       compatible = "zmk,behavior-hold-tap";
       label = "TAPDANCE";
       #binding-cells = <2>;
-      tapping-term-ms = <300>;
+      tapping-term-ms = <250>;
       quick_tap_ms = <0>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
@@ -67,18 +67,18 @@
 
     symbol_layer {
       bindings = <
-        &kp ESC     &kp PLUS   &kp MINUS       &kp UNDER      &kp GRAVE    &kp SQT      &kp N4       &kp N5       &kp N6  &kp BSPC
-        &kp TAB     &kp EQUAL  &hm LALT QMARK  &hm LGUI LPAR  &kp RPAR     &kp N0       &hm RGUI N1  &hm RALT N2  &kp N3  &kp ENTER
-        &kp TILDE   &kp LT     &kp GT          &kp LBKT       &kp RBKT     &kp FSLH     &kp N7       &kp N8       &kp N9  &kp CAPS
+        &kp ESC     &kp EQUAL  &kp LBRC        &kp RBRC       &kp GRAVE    &kp AMPS     &kp N4       &kp N5       &kp N6  &kp BSPC
+        &kp TAB     &kp MINUS  &hm LALT LPAR   &hm LGUI RPAR  &kp QMARK    &kp N0       &hm RGUI N1  &hm RALT N2  &kp N3  &kp ENTER
+        &kp TILDE   &kp BLSH   &kp LBKT        &kp RBKT       &kp UNDER    &kp AT       &kp N7       &kp N8       &kp N9  &kp CAPS
                                                &kp LSHIFT     &to NAV      &to DEFAULT  &kp RCTRL 
       >;
     };
 
     navigation_layer {
       bindings = <
-        &bt BT_CLR  &kp C_PREV    &kp C_NEXT    &kp C_PP    &kp F11     &none        &none     &none     &none      &none
-        &bt BT_NXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp F1      &kp F5      &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT  &none
-        &bt BT_PRV  &kp C_BRI_UP  &kp C_BRI_DN  &kp F8      &kp F10     &none        &none     &none     &none      &reset
+        &bt BT_CLR    &kp C_PREV    &kp C_NEXT    &kp C_PP    &none       &kp F1       &kp F2    &kp F5   &kp F12    &none
+        &bt BT_SEL 0  &kp C_VOL_DN  &kp C_VOL_UP  &none       &none       &kp LEFT     &kp DOWN  &kp UP   &kp RIGHT  &none
+        &bt BT_SEL 1  &kp C_BRI_UP  &kp C_BRI_DN  &none       &none       &none        &kp F10   &kp F11  &none      &reset
 																								&kp LSHIFT  &none       &to DEFAULT  &kp RCTRL
       >;
     };
