@@ -55,19 +55,19 @@
 
     default_layer {
       bindings = <
-        &kp Y         &kp W    &kp C       &kp M       &kp Z         &kp B      &kp F       &kp U       &kp DOT    &kp X
-        &kp I         &kp R    &hm LALT S  &hm LGUI T  &kp G         &kp P      &hm RGUI N  &hm RALT E  &kp A      &kp O
-        &mt LSHIFT Q  &kp L    &kp V       &kp D       &kp K         &kp J      &kp H       &kp SQT     &kp COMMA  &kp FSLH
-                                           &kp LSHIFT  &to SYMBOL    &kp SPACE  &kp RCTRL
+        &kp Y         &kp L    &kp C       &kp M       &kp K         &kp Z      &kp F       &kp U       &kp DOT    &kp X
+        &kp I         &kp R    &hm LGUI S  &hm LALT T  &kp G         &kp P      &hm RALT N  &hm RGUI E  &kp A      &kp O
+        &mt LSHIFT Q  &kp W    &kp V       &kp D       &kp J         &kp B      &kp H       &kp SQT     &kp COMMA  &kp FSLH
+                                           &kp LCTRL  &to SYMBOL    &kp SPACE  &kp RSHIFT
       >;
     };
 
     symbol_layer {
       bindings = <
         &kp ESC     &kp EQUAL  &kp LBRC       &kp RBRC       &kp GRAVE    &kp AMPS     &kp N4       &kp N5       &kp N6  &kp BSPC
-        &kp TAB     &kp MINUS  &hm LALT LPAR  &hm LGUI RPAR  &kp SEMI     &kp N0       &hm RGUI N1  &hm RALT N2  &kp N3  &kp ENTER
+        &kp TAB     &kp MINUS  &hm LGUI LPAR  &hm LALT RPAR  &kp SEMI     &kp N0       &hm RALT N1  &hm RGUI N2  &kp N3  &kp ENTER
         &kp TILDE   &kp BSLH   &kp LBKT       &kp RBKT       &kp UNDER    &kp AT       &kp N7       &kp N8       &kp N9  &none
-                                              &kp LSHIFT     &to NAV      &to DEFAULT  &kp RCTRL 
+                                              &trans         &to NAV      &to DEFAULT  &trans 
       >;
     };
 
@@ -76,16 +76,16 @@
         &bt BT_CLR    &kp C_PREV    &kp C_NEXT    &kp C_PP    &none       &kp F1       &kp F2    &kp F5   &kp F12    &bt BT_SEL 0
         &bt BT_SEL 4  &kp C_VOL_DN  &kp C_VOL_UP  &none       &none       &kp LEFT     &kp DOWN  &kp UP   &kp RIGHT  &bt BT_SEL 1 
         &bt BT_SEL 3  &kp C_BRI_UP  &kp C_BRI_DN  &none       &none       &none        &kp F10   &kp F11  &none      &bt BT_SEL 2
-                                                  &kp LSHIFT  &to ALT     &to DEFAULT  &kp RCTRL
+                                                  &trans      &to ALT     &to DEFAULT  &trans
       >;
     };
 		 
     alternative_layer {
       bindings = <
         &kp Q         &kp W    &kp E       &kp R       &kp T         &kp Y      &kp U       &kp I       &kp O    &kp P
-        &kp A         &kp S    &hm LALT D  &hm LGUI F  &kp G         &kp H      &hm RGUI J  &hm RALT K  &kp L    &kp SEMI
+        &kp A         &kp S    &hm LGUI D  &hm LALT F  &kp G         &kp H      &hm RALT J  &hm RGUI K  &kp L    &kp SEMI
         &mt LSHIFT Z  &kp X    &kp C       &kp V       &kp B         &kp N      &kp M       &kp COMMA   &kp DOT  &kp FSLH
-                                           &kp LSHIFT  &to SYMBOL    &kp SPACE  &kp RCTRL
+                                           &trans      &to SYMBOL    &kp SPACE  &trans
       >;
     };
   };
