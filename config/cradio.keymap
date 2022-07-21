@@ -35,9 +35,9 @@
       label = "HOMEROW_MODS";
       #binding-cells = <2>;
       tapping-term-ms = <250>;
-      quick_tap_ms = <0>;
+      quick-tap-ms = <0>;
       flavor = "tap-preferred";
-			global_quick_tap;
+			global-quick-tap;
       bindings = <&kp>, <&kp>;
   };
     td: tapdance {
@@ -45,8 +45,8 @@
       label = "TAPDANCE";
       #binding-cells = <2>;
       tapping-term-ms = <250>;
-      quick_tap_ms = <0>;
-			global_quick_tap;
+      quick-tap-ms = <0>;
+			global-quick-tap;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
