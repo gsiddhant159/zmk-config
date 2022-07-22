@@ -134,7 +134,7 @@
       bindings = <
         &kp Q         &kp W        &kp E       &kp R       &kp T       &kp Y      &kp U       &kp I       &kp O          &kp P
         &kp A         &kp S        &hm LALT D  &hm LGUI F  &kp G       &kp H      &hm RGUI J  &hm RALT K  &kp L          &kp SEMI
-        &mt LSHIFT Z  &mt LCTRL X  &kp C       &kp V       &kp B       &kp N      &kp M       &kp COMMA   &kp RCTRL DOT  &mt RSHIFT FSLH
+        &mt LSHIFT Z  &mt LCTRL X  &kp C       &kp V       &kp B       &kp N      &kp M       &kp COMMA   &mt RCTRL DOT  &mt RSHIFT FSLH
                                                &trans      &tog SYM    &kp SPACE  &trans
       >;
     };
