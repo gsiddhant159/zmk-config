@@ -1,17 +1,20 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEFAULT 0
-#define SYMBOL 1
+#define DEF 0
+#define SYM 1
 #define NAV 2
-#define ALT 3
+#define BT 3
+#define FN 4
+#define ALT 5
+#define QWE 6
+
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <250>;
+};
 
 //                KEY POSITIONS
 // 
@@ -23,12 +26,46 @@
 //                     ╰─────────╯ ╰────────╯           
 // 
 
-&mt {
-    flavor = "tap-preferred";
-    tapping_term_ms = <250>;
-};
-
 / {
+
+  combos {
+    compatible = "zmk,combos";
+
+    bt_layer_toggle {
+      timeout-ms=<150>;
+      key-positions = <0 9>;
+      bindings = <&tog BT>;
+      layer = <DEF>;
+    };
+
+    combo_esc {
+      timeout-ms = <50>;
+      key-positions = <0 1>;
+      bindings = <&kp ESC>;
+    };
+
+    fn_layer_toggle {
+      timeout-ms = <150>;
+      key-positions = <7 8>;
+      bindings = <&tog FN>;
+    };
+
+    qwerty_layout_toggle {
+      timeout-ms = <150>;
+      key-positions = <0 1 2 3 4>;
+      bindings = <&tog QWE>;
+      layer = <DEF>;
+    };
+
+    alternative_layout_toggle {
+      timeout-ms = <150>;
+      key-positions = <10 11 12>;
+      bindings = <&tog ALT>;
+      layer = <DEF>;
+    };
+
+  };
+
   behaviors {
     hm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
@@ -38,7 +75,18 @@
       quick-tap-ms = <0>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
-  };
+    };
+
+    lm: layer_mod {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_MODS";
+      #binding-cells = <2>;
+      tapping-term-ms = <250>;
+      quick-tap-ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&to>, <&tog>;
+    };
+
     td: tapdance {
       compatible = "zmk,behavior-hold-tap";
       label = "TAPDANCE";
@@ -55,37 +103,64 @@
 
     default_layer {
       bindings = <
-        &kp Y         &kp L    &kp C       &kp M       &kp K         &kp Z      &kp F       &kp U       &kp DOT    &kp X
-        &kp I         &kp R    &hm LGUI S  &hm LALT T  &kp G         &kp P      &hm RALT N  &hm RGUI E  &kp A      &kp O
-        &mt LSHIFT Q  &kp W    &kp V       &kp D       &kp J         &kp B      &kp H       &kp SQT     &kp COMMA  &kp FSLH
-                                           &kp LCTRL  &to SYMBOL    &kp SPACE  &kp RSHIFT
+        &kp Q         &kp D    &kp R       &kp W       &kp B       &kp J      &kp F       &kp U       &kp P    &kp SQT
+        &kp A         &kp S    &hm LGUI H  &hm LALT T  &kp G       &kp Y      &hm RALT N  &hm RGUI E  &kp O    &kp I
+        &mt LSHIFT Z  &kp X    &kp M       &kp C       &kp V       &kp K      &kp L       &kp COMMA   &kp DOT  &kp SEMI
+                                           &kp LCTRL   &tog SYM    &kp SPACE  &kp RSHIFT
       >;
     };
 
     symbol_layer {
       bindings = <
         &kp ESC     &kp EQUAL  &kp LBRC       &kp RBRC       &kp GRAVE    &kp AMPS     &kp N4       &kp N5       &kp N6  &kp BSPC
-        &kp TAB     &kp MINUS  &hm LGUI LPAR  &hm LALT RPAR  &kp SEMI     &kp N0       &hm RALT N1  &hm RGUI N2  &kp N3  &kp ENTER
-        &kp TILDE   &kp BSLH   &kp LBKT       &kp RBKT       &kp UNDER    &kp AT       &kp N7       &kp N8       &kp N9  &none
-                                              &trans         &to NAV      &to DEFAULT  &trans 
+        &kp TAB     &kp MINUS  &hm LGUI LPAR  &hm LALT RPAR  &kp FSLH     &kp N0       &hm RALT N1  &hm RGUI N2  &kp N3  &kp ENTER
+        &kp TILDE   &kp BSLH   &kp LBKT       &kp RBKT       &kp UNDER    &kp AT       &kp N7       &kp N8       &kp N9  &trans
+                                              &trans         &tog NAV     &lm DEF SYM  &trans 
       >;
     };
 
     navigation_layer {
       bindings = <
-        &bt BT_CLR    &kp C_PREV    &kp C_NEXT    &kp C_PP    &none       &kp F1       &kp F2    &kp F5   &kp F12    &bt BT_SEL 0
-        &bt BT_SEL 4  &kp C_VOL_DN  &kp C_VOL_UP  &none       &none       &kp LEFT     &kp DOWN  &kp UP   &kp RIGHT  &bt BT_SEL 1 
-        &bt BT_SEL 3  &kp C_BRI_UP  &kp C_BRI_DN  &none       &none       &none        &kp F10   &kp F11  &none      &bt BT_SEL 2
-                                                  &trans      &to ALT     &to DEFAULT  &trans
+        &none  &kp C_PREV    &kp C_NEXT    &kp C_PP    &none      &none        &none     &none    &none      &none
+        &none  &kp C_VOL_DN  &kp C_VOL_UP  &none       &none      &kp LEFT     &kp DOWN  &kp UP   &kp RIGHT  &none 
+        &none  &kp C_BRI_UP  &kp C_BRI_DN  &none       &none      &none        &none     &none    &none      &none
+                                           &trans      &trans    &lm DEF NAV  &trans
       >;
     };
-		 
+
+    bluetooth_layer {
+      bindings = <
+        &none         &none         &none         &none         &none           &none       &none  &none  &none  &none  
+        &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0    &none       &none  &none  &none  &none  
+        &bt BT_CLR    &none         &none         &none         &none           &none       &none  &none  &none  &none  
+                                                  &none         &none           &lm DEF BT  &none
+      >;
+    };
+
+    fn_layer {
+      bindings = <
+        &none    &none   &none        &none        &none     &none        &kp F10      &kp F11      &none   &none  
+        &kp F12  &kp F9  &hm LGUI F7  &hm LALT F5  &kp F8    &kp F4       &hm RALT F1  &hm RGUI F2  &kp F3  &kp F6  
+        &none    &none   &none        &none        &none     &none        &none        &none        &none   &none  
+                                      &trans       &none     &lm DEF FN   &trans
+      >;
+    };
+   
     alternative_layer {
       bindings = <
-        &kp Q         &kp W    &kp E       &kp R       &kp T         &kp Y      &kp U       &kp I       &kp O    &kp P
-        &kp A         &kp S    &hm LGUI D  &hm LALT F  &kp G         &kp H      &hm RALT J  &hm RGUI K  &kp L    &kp SEMI
-        &mt LSHIFT Z  &kp X    &kp C       &kp V       &kp B         &kp N      &kp M       &kp COMMA   &kp DOT  &kp FSLH
-                                           &trans      &to SYMBOL    &kp SPACE  &trans
+        &kp Q         &kp L    &kp C       &kp M       &kp K       &kp Z      &kp F       &kp U       &kp DOT    &kp X
+        &kp I         &kp R    &hm LGUI S  &hm LALT T  &kp G       &kp P      &hm RALT N  &hm RGUI E  &kp A      &kp O
+        &mt LSHIFT Y  &kp W    &kp V       &kp D       &kp J       &kp B      &kp H       &kp SQT     &kp COMMA  &kp SEMI
+                                           &kp LCTRL   &tog SYM    &kp SPACE  &kp RSHIFT
+      >;
+    };
+
+    qwerty_layer {
+      bindings = <
+        &kp Q         &kp W    &kp E       &kp R       &kp T       &kp Y      &kp U       &kp I       &kp O    &kp P
+        &kp A         &kp S    &hm LGUI D  &hm LALT F  &kp G       &kp H      &hm RALT J  &hm RGUI K  &kp L    &kp FSLH
+        &mt LSHIFT Z  &kp X    &kp C       &kp V       &kp B       &kp N      &kp M       &kp COMMA   &kp DOT  &kp SEMI
+                                           &trans      &tog SYM    &kp SPACE  &trans
       >;
     };
   };
