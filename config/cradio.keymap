@@ -32,7 +32,7 @@
     compatible = "zmk,combos";
 
     bt_layer_toggle {
-      timeout-ms=<150>;
+      timeout-ms=<350>;
       key-positions = <0 9>;
       bindings = <&tog BT>;
     };
@@ -44,20 +44,20 @@
     };
 
     fn_layer_toggle {
-      timeout-ms = <150>;
+      timeout-ms = <350>;
       key-positions = <7 8>;
       bindings = <&tog FN>;
     };
 
     qwerty_layout_toggle {
-      timeout-ms = <150>;
+      timeout-ms = <350>;
       key-positions = <0 1 2 3 4>;
       bindings = <&tog QWE>;
       layers = <DEF ALT QWE>;
     };
 
     alternative_layout_toggle {
-      timeout-ms = <150>;
+      timeout-ms = <350>;
       key-positions = <10 11 12>;
       bindings = <&tog ALT>;
       layers = <DEF QWE ALT>;
