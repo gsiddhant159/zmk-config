@@ -35,7 +35,6 @@
       timeout-ms=<150>;
       key-positions = <0 9>;
       bindings = <&tog BT>;
-      layers = <DEF>;
     };
 
     combo_esc {
@@ -54,14 +53,14 @@
       timeout-ms = <150>;
       key-positions = <0 1 2 3 4>;
       bindings = <&tog QWE>;
-      layers = <DEF>;
+      layers = <DEF ALT>;
     };
 
     alternative_layout_toggle {
       timeout-ms = <150>;
       key-positions = <10 11 12>;
       bindings = <&tog ALT>;
-      layers = <DEF>;
+      layers = <DEF QWE>;
     };
 
   };
