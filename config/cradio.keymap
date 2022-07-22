@@ -34,7 +34,7 @@
     bt_layer_toggle {
       timeout-ms=<350>;
       key-positions = <0 9>;
-      bindings = <&tog BT>;
+      bindings = <&tog CON>;
     };
 
     combo_esc {
