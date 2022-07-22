@@ -159,10 +159,10 @@
 
     control_layer {
       bindings = <
-        &none         &none         &none         &none         &none           &none        &none  &none  &none  &none  
-        &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0    &none        &none  &none  &none  &none  
-        &bt BT_CLR    &none         &none         &none         &reset          &none        &none  &none  &none  &none  
-                                                  &none         &bootloader     &lm DEF CON  &none
+        &none         &none         &none         &none         &none           &none        &none        &none  &none  &none  
+        &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0    &none        &none        &none  &none  &none  
+        &bt BT_CLR    &none         &none         &bootloader   &reset          &reset       &bootloader  &none  &none  &none  
+                                                  &none         &none           &lm DEF CON  &none
       >;
     };
 
