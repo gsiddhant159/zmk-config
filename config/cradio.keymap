@@ -53,14 +53,14 @@
       timeout-ms = <150>;
       key-positions = <0 1 2 3 4>;
       bindings = <&tog QWE>;
-      layers = <DEF ALT>;
+      layers = <DEF ALT QWE>;
     };
 
     alternative_layout_toggle {
       timeout-ms = <150>;
       key-positions = <10 11 12>;
       bindings = <&tog ALT>;
-      layers = <DEF QWE>;
+      layers = <DEF QWE ALT>;
     };
 
   };
