@@ -35,7 +35,7 @@
       timeout-ms=<150>;
       key-positions = <0 9>;
       bindings = <&tog BT>;
-      layer = <DEF>;
+      layers = <DEF>;
     };
 
     combo_esc {
@@ -54,14 +54,14 @@
       timeout-ms = <150>;
       key-positions = <0 1 2 3 4>;
       bindings = <&tog QWE>;
-      layer = <DEF>;
+      layers = <DEF>;
     };
 
     alternative_layout_toggle {
       timeout-ms = <150>;
       key-positions = <10 11 12>;
       bindings = <&tog ALT>;
-      layer = <DEF>;
+      layers = <DEF>;
     };
 
   };
@@ -103,17 +103,17 @@
 
     default_layer {
       bindings = <
-        &kp Q         &kp D    &kp R       &kp W       &kp B       &kp J      &kp F       &kp U       &kp P    &kp SQT
-        &kp A         &kp S    &hm LGUI H  &hm LALT T  &kp G       &kp Y      &hm RALT N  &hm RGUI E  &kp O    &kp I
-        &mt LSHIFT Z  &kp X    &kp M       &kp C       &kp V       &kp K      &kp L       &kp COMMA   &kp DOT  &kp SEMI
-                                           &kp LCTRL   &tog SYM    &kp SPACE  &kp RSHIFT
+        &kp Q         &kp D        &kp R       &kp W       &kp B       &kp J      &kp F       &kp U       &kp P    &kp SQT
+        &kp A         &kp S        &hm LALT H  &hm LGUI T  &kp G       &kp Y      &hm RGUI N  &hm RALT E  &kp O    &kp I
+        &mt LSHIFT Z  &mt LCTRL X  &kp M       &kp C       &kp V       &kp K      &kp L       &kp COMMA   &kp DOT  &kp SEMI
+                                               &sk LSHIFT  &tog SYM    &kp SPACE  &kp RCTRL
       >;
     };
 
     symbol_layer {
       bindings = <
         &kp ESC     &kp EQUAL  &kp LBRC       &kp RBRC       &kp GRAVE    &kp AMPS     &kp N4       &kp N5       &kp N6  &kp BSPC
-        &kp TAB     &kp MINUS  &hm LGUI LPAR  &hm LALT RPAR  &kp FSLH     &kp N0       &hm RALT N1  &hm RGUI N2  &kp N3  &kp ENTER
+        &kp TAB     &kp MINUS  &hm LALT LPAR  &hm LGUI RPAR  &kp FSLH     &kp N0       &hm RGUI N1  &hm RALT N2  &kp N3  &kp ENTER
         &kp TILDE   &kp BSLH   &kp LBKT       &kp RBKT       &kp UNDER    &kp AT       &kp N7       &kp N8       &kp N9  &trans
                                               &trans         &tog NAV     &lm DEF SYM  &trans 
       >;
@@ -139,28 +139,28 @@
 
     fn_layer {
       bindings = <
-        &none    &none   &none        &none        &none     &none        &kp F10      &kp F11      &none   &none  
-        &kp F12  &kp F9  &hm LGUI F7  &hm LALT F5  &kp F8    &kp F4       &hm RALT F1  &hm RGUI F2  &kp F3  &kp F6  
-        &none    &none   &none        &none        &none     &none        &none        &none        &none   &none  
-                                      &trans       &none     &lm DEF FN   &trans
+        &none       &none      &none        &none        &none     &none        &kp F10      &kp F11      &none   &none  
+        &kp F12     &kp F9     &hm LALT F7  &hm LGUI F5  &kp F8    &kp F4       &hm RGUI F1  &hm RALT F2  &kp F3  &kp F6  
+        &kp LSHIFT  &kp LCTRL  &none        &none        &none     &none        &none        &none        &none   &none  
+                                            &trans       &none     &lm DEF FN   &trans
       >;
     };
    
     alternative_layer {
       bindings = <
-        &kp Q         &kp L    &kp C       &kp M       &kp K       &kp Z      &kp F       &kp U       &kp DOT    &kp X
-        &kp I         &kp R    &hm LGUI S  &hm LALT T  &kp G       &kp P      &hm RALT N  &hm RGUI E  &kp A      &kp O
-        &mt LSHIFT Y  &kp W    &kp V       &kp D       &kp J       &kp B      &kp H       &kp SQT     &kp COMMA  &kp SEMI
-                                           &kp LCTRL   &tog SYM    &kp SPACE  &kp RSHIFT
+        &kp Q         &kp L        &kp C       &kp M       &kp K       &kp Z      &kp F       &kp U       &kp DOT    &kp X
+        &kp I         &kp R        &hm LALT S  &hm LGUI T  &kp G       &kp P      &hm RGUI N  &hm RALT E  &kp A      &kp O
+        &mt LSHIFT Y  &mt LCTRL W  &kp V       &kp D       &kp J       &kp B      &kp H       &kp SQT     &kp COMMA  &kp SEMI
+                                               &kp LCTRL   &tog SYM    &kp SPACE  &kp RSHIFT
       >;
     };
 
     qwerty_layer {
       bindings = <
-        &kp Q         &kp W    &kp E       &kp R       &kp T       &kp Y      &kp U       &kp I       &kp O    &kp P
-        &kp A         &kp S    &hm LGUI D  &hm LALT F  &kp G       &kp H      &hm RALT J  &hm RGUI K  &kp L    &kp FSLH
-        &mt LSHIFT Z  &kp X    &kp C       &kp V       &kp B       &kp N      &kp M       &kp COMMA   &kp DOT  &kp SEMI
-                                           &trans      &tog SYM    &kp SPACE  &trans
+        &kp Q         &kp W        &kp E       &kp R       &kp T       &kp Y      &kp U       &kp I       &kp O    &kp P
+        &kp A         &kp S        &hm LALT D  &hm LGUI F  &kp G       &kp H      &hm RGUI J  &hm RALT K  &kp L    &kp FSLH
+        &mt LSHIFT Z  &mt LCTRL X  &kp C       &kp V       &kp B       &kp N      &kp M       &kp COMMA   &kp DOT  &kp SEMI
+                                               &trans      &tog SYM    &kp SPACE  &trans
       >;
     };
   };
