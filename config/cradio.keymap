@@ -27,6 +27,18 @@
 // 
 
 / {
+  macros {
+    del_word: del_word {
+      compatible = "zmk,behavior-macro";
+      label = "DEL_WORD";
+      #binding-cells = <0>;
+      bindings
+        = <&macro_press &kp LALT>
+        , <&macro_tap &kp BSPC>
+        , <&macro_release &kp LALT>
+        ;
+    };
+  };
 
   combos {
     compatible = "zmk,combos";
@@ -51,14 +63,21 @@
 
     combo_bspc {
       timeout-ms = <50>;
-      key-positions = <8 9>;
+      key-positions = <18 19>;
       bindings = <&kp BSPC>;
+    };
+    
+    combo_del_word {
+      timeout-ms = <50>;
+      key-positions = <8 9>;
+      bindings = <&del_word>;
     };
 
     fn_layer_toggle {
       timeout-ms = <350>;
       key-positions = <7 8>;
       bindings = <&tog FN>;
+      slow-release;
     };
 
     qwerty_layout_toggle {
@@ -152,7 +171,7 @@
       bindings = <
         &none  &kp C_PREV    &kp C_NEXT    &kp C_PP    &none      &none        &none     &none    &none      &none
         &none  &kp C_VOL_DN  &kp C_VOL_UP  &none       &none      &kp LEFT     &kp DOWN  &kp UP   &kp RIGHT  &none 
-        &none  &kp C_BRI_UP  &kp C_BRI_DN  &none       &none      &none        &none     &none    &none      &none
+        &none  &kp C_BRI_DN  &kp C_BRI_UP  &none       &none      &none        &none     &none    &none      &none
                                            &trans      &trans    &lm DEF NAV  &trans
       >;
     };
