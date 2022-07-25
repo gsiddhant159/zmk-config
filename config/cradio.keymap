@@ -28,18 +28,17 @@
 
 / {
   macros {
-    // del_word: del_word {
-    //   compatible = "zmk,behavior-macro";
-    //   label = "ZM_del_word";
-    //   #binding-cells = <0>;
-    //   bindings
-    //     = <&macro_press &kp LALT>
-    //     , <&macro_tap &kp BSPC>
-    //     , <&macro_release &kp LALT>
-    //     ;
-    // };
+     del_word: del_word {
+       compatible = "zmk,behavior-macro";
+       label = "ZM_del_word";
+       #binding-cells = <0>;
+       bindings
+         = <&macro_press &kp LALT>
+         , <&macro_tap &kp BSPC>
+         , <&macro_release &kp LALT>
+         ;
+     };
 
-    // testing
     zed_em_kay: zed_em_kay {
       label = "ZM_zed_em_kay";
       compatible = "zmk,behavior-macro";
