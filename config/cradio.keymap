@@ -124,7 +124,7 @@
       label = "tapdance_delete";
       #binding-cells = <2>;
       tapping-term-ms = <200>;
-      bindings = <&kp H>, <&kp BSPC>, <&double_bspc>, <&del_word;
+      bindings = <&kp H>, <&kp BSPC>, <&double_bspc>, <&del_word>;
     };
   };
 
