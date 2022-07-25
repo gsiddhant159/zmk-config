@@ -74,7 +74,7 @@
     };
 
     fn_layer_toggle {
-      timeout-ms = <350>;
+      timeout-ms = <700>;
       key-positions = <7 8>;
       bindings = <&tog FN>;
       slow-release;
