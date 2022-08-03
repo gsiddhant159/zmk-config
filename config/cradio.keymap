@@ -124,7 +124,7 @@
         &kp DOT           &kp V        &kp W       &kp M       &kp J       &kp Z      &kp F       &kp U       &kp X           &kp Q
         &kp A             &kp S        &hm LALT R  &hm LGUI T  &kp G       &kp P      &hm RGUI N  &hm RALT E  &kp O           &kp I
         &mt LSHIFT COMMA  &mt LCTRL C  &kp L       &kp D       &kp K       &kp B      &dw         &kp SQT     &mt RCTRL SEMI  &mt RSHIFT Y
-                                                   &kp LSHIFT  &tog SYM    &kp SPACE  &kp RCTRL
+                                                   &sk LSHIFT  &tog SYM    &kp SPACE  &kp RCTRL
       >;
     };
 
@@ -133,7 +133,7 @@
         &kp Q         &kp D        &kp R       &kp W       &kp B       &kp J      &kp F       &kp U       &kp P          &kp SEMI
         &kp A         &kp S        &hm LALT H  &hm LGUI T  &kp G       &kp Y      &hm RGUI N  &hm RALT E  &kp O          &kp I
         &mt LSHIFT Z  &mt LCTRL X  &kp M       &kp C       &kp V       &kp K      &kp L       &kp COMMA   &mt RCTRL DOT  &mt RSHIFT SQT
-                                               &sk LSHIFT  &tog SYM    &kp SPACE  &kp RCTRL
+                                               &trans      &tog SYM    &kp SPACE  &kp RCTRL
       >;
     };
 
