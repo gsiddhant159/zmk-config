@@ -87,9 +87,9 @@
   };
 
   behaviors {
-    hm: homerow_mods {
+    hm: hold_mods {
       compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
+      label = "HOLD_MODS";
       #binding-cells = <2>;
       tapping-term-ms = <250>;
       quick-tap-ms = <0>;
@@ -121,10 +121,10 @@
 
     default_layer {
       bindings = <
-        &kp DOT           &kp V        &kp W       &kp M       &kp J       &kp Z      &kp F       &kp U       &kp X           &kp Q
-        &kp A             &kp S        &hm LALT R  &hm LGUI T  &kp G       &kp P      &hm RGUI N  &hm RALT E  &kp O           &kp I
-        &mt LSHIFT COMMA  &mt LCTRL C  &kp L       &kp D       &kp K       &kp B      &dw         &kp SQT     &mt RCTRL SEMI  &mt RSHIFT Y
-                                                   &sk LSHIFT  &tog SYM    &kp SPACE  &kp RCTRL
+        &hm SEMI FSLH   &kp V        &kp W       &kp M       &kp J       &kp Z      &kp F       &kp U       &kp X           &kp Q
+        &kp A           &kp S        &hm LALT R  &hm LGUI T  &kp G       &kp P      &hm RGUI N  &hm RALT E  &kp O           &kp I
+        &mt LSHIFT DOT  &mt LCTRL C  &kp L       &kp D       &kp K       &kp B      &dw         &kp SQT     &hm SEMI COMMA  &mt RSHIFT Y
+                                                 &sk LSHIFT  &tog SYM    &kp SPACE  &kp RCTRL
       >;
     };
 
