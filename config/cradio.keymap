@@ -118,7 +118,7 @@
       label = "tapdance_delete";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&kp H>, <&kp BSPC>, <&double_bspc>, <&del_word>;
+      bindings = <&kp H>, <&del_word>;
     };
   };
 
@@ -130,7 +130,7 @@
         &hm SEMI FSLH  &kp V  &kp W       &kp M       &kp J       &kp Z      &kp F       &kp U        &kp X           &kp Q
         &kp A          &kp S  &hm LALT R  &hm LGUI T  &kp G       &kp P      &hm RGUI N  &hm RALT E   &kp O           &kp I
         &hm COLON DOT  &kp C  &kp L       &kp D       &kp K       &kp B      &dw         &hm DQT SQT  &hm SEMI COMMA  &mt RSHIFT Y
-                              &sk LSHIFT  &tog SYM    &kp SPACE  &kp RCTRL
+                                          &sk LSHIFT  &tog SYM    &kp SPACE  &kp RCTRL
       >;
     };
 
