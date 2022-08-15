@@ -16,7 +16,7 @@
   macros {
     del_word: macro_del_word {
       compatible = "zmk,behavior-macro";
-      label = "ZM_del_word";
+      label = "macro_del_word";
       #binding-cells = <0>;
       bindings
         = <&macro_press &kp LALT>
@@ -44,24 +44,14 @@
         = <&macro_press &kp LCTRL>
         , <&macro_press &kp LSHIFT>
         , <&macro_tap &kp TAB>
-        , <&macro_release &kp LCTRL>
         , <&macro_release &kp LSHIFT>
+        , <&macro_release &kp LCTRL>
         ;
     };
 
   };
 
   behaviors {
-    mt: homerow_mods {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
-      #binding-cells = <2>;
-      tapping-term-ms = <200>;
-      quick_tap_ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-    };
-
     mt_del: modtap_delword_bspc {
       compatible = "zmk,behaviour-hold-tap";
       label = "modtap_delword_bspc";
@@ -69,7 +59,7 @@
       tapping-term-ms = <200>;
       quick_tap_ms = <0>;
       flavor = "tap-preferred";
-      bindings = <&del_word>, <&kp>;
+      bindings = <&del_word>, <&kp BSPC>;
     };
   };
 
