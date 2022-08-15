@@ -165,7 +165,7 @@
     navigation_layer {
       bindings = <
         &bt BT_NXT  &prvtab   &kp UP  &nextab &none &none &none &none &none &none
-        &bt BT_PRV  &LEFT     &DOWN   &RIGHT  &none &none &none &none &none &none
+        &bt BT_PRV  &kp LEFT     &kp DOWN   &kp RIGHT  &none &none &none &none &none &none
         &bt BT_CLR  &none     &none   &none   &none &none &none &none &none &reset
         &trans &trans &trans &trans 
       >;
