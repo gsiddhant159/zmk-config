@@ -72,7 +72,7 @@
       flavor = "tap-preferred";
       bindings = <&del_word>, <&kp>;  
     };
-  }
+  };
 
   keymap {
     compatible = "zmk,keymap";
