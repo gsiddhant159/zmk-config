@@ -48,18 +48,24 @@
         , <&macro_release &kp LCTRL>
         ;
     };
-
   };
 
   behaviors {
-    mt_del: modtap_delword_bspc {
-      compatible = "zmk,behaviour-hold-tap";
-      label = "modtap_delword_bspc";
+    // mt_del: modtap_delword_bspc {
+    //   compatible = "zmk,behaviour-hold-tap";
+    //   label = "modtap_delword_bspc";
+    //   #binding-cells = <2>;
+    //   tapping-term-ms = <200>;
+    //   quick_tap_ms = <0>;
+    //   flavor = "tap-preferred";
+    //   bindings = <&del_word>, <&kp BSPC>;
+    // };
+    td_bspc: tapdance_bspc {
+      compatible = "zmk,behavior-tap-dance";
+      label = "tapdance_bspc";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      quick_tap_ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&del_word>, <&kp BSPC>;
+      bindings = <&kp BSPC>, <&del_word>;
     };
   };
 
@@ -71,7 +77,7 @@
         &mt ESC Q  &mt GRAVE W  &mt TAB E  &kp R  &kp T  &kp Y   &kp U  &mt TAB I  &kp O  &mt DEL P
         &mt LSHIFT A &mt LALT S &mt LCTRL D &mt LGUI F &mt CAPS G &mt CAPS SQT &mt RGUI H &mt RCTRL J &mt RALT K &mt RSHIFT L
         &kp Z &kp X &kp C &kp V &kp COMMA &kp DOT &kp B &kp N &kp M &kp FSLH
-        &lt NAV TAB &kp SPACE &mt_del &lt SYM LS(TAB)
+        &lt NAV TAB &kp SPACE &td_bspc &lt SYM LS(TAB)
       >;
     };
 
