@@ -52,7 +52,7 @@
 
   behaviors {
     mt_bspc: modtap_delword_bspc {
-      compatible = "zmk,behaviour-hold-tap";
+      compatible = "zmk,behavior-hold-tap";
       label = "modtap_delword_bspc";
       #binding-cells = <2>;
       tapping-term-ms = <200>;
@@ -60,6 +60,7 @@
       flavor = "tap-preferred";
       bindings = <&del_word>, <&kp>;
     };
+
     td_bspc: tapdance_bspc {
       compatible = "zmk,behavior-tap-dance";
       label = "tapdance_bspc";
