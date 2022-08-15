@@ -69,7 +69,7 @@
     default_layer {
       bindings = <
         &mt ESC Q  &mt GRAVE W  &mt TAB E  &kp R  &kp T  &kp Y   &kp U  &mt TAB I  &kp O  &mt DEL P
-        &mt LSHIFT  A &mt LALT    S  &mt LCTRL   D  &mt LGUI    F  &mt CAPS    G  &mt CAPS    SQT  &mt RGUI    H  &mt RCTRL   J  &mt RALT    K  &mt RSHIFT  L
+        &mt LSHIFT A &mt LALT S &mt LCTRL D &mt LGUI F &mt CAPS G &mt CAPS SQT &mt RGUI H &mt RCTRL J &mt RALT K &mt RSHIFT L
         &kp Z &kp X &kp C &kp V &kp COMMA &kp DOT &kp B &kp N &kp M &kp FSLH
         &lt NAV TAB &kp SPACE &mt_del &lt SYM LS(TAB)
       >;
@@ -79,7 +79,7 @@
       bindings = <
         // esc, grave, tab, n0-9, [, ], -, =, |, wasd,
         &kp GRAVE &kp TAB &none &none &none &none &none &none &none &kp DEL
-        &mt LSHIFT  N5 &mt LALT    N6 &mt LCTRL   N7 &mt LGUI    N8 &mt CAPS    N9 &mt CAPS    N0 &mt RGUI    N1 &mt RCTRL   N2 &mt RALT    N3 &mt RSHIFT  N4
+        &mt LSHIFT N5 &mt LALT N6 &mt LCTRL N7 &mt LGUI N8 &mt CAPS N9 &mt CAPS N0 &mt RGUI N1 &mt RCTRL N2 &mt RALT N3 &mt RSHIFT N4
         &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp N1 &kp N2 &kp N3 &kp N4
         &trans &trans &trans &trans
       >;
@@ -94,4 +94,4 @@
       >;
     };
   };
-}
+};
