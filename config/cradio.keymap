@@ -35,7 +35,8 @@
         , <&macro_tap &kp TAB>
         , <&macro_release &kp LCTRL>
         ;
-    }
+    };
+
     prvtab: macro_nextab {
       compatible = "zmk,behavior-macro";
       label = "ZM_del_word";
@@ -47,7 +48,8 @@
         , <&macro_release &kp LCTRL>
         , <&macro_release &kp LSHIFT>
         ;
-    }
+    };
+    
   };
 
   behaviors {
