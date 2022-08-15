@@ -28,7 +28,7 @@
 
     nextab: macro_nextab {
       compatible = "zmk,behavior-macro";
-      label = "ZM_del_word";
+      label = "macro_nextab";
       #binding-cells = <0>;
       bindings
         = <&macro_press &kp LCTRL>
@@ -37,9 +37,9 @@
         ;
     };
 
-    prvtab: macro_nextab {
+    prvtab: macro_prvtab {
       compatible = "zmk,behavior-macro";
-      label = "ZM_del_word";
+      label = "macro_prvtab";
       #binding-cells = <0>;
       bindings
         = <&macro_press &kp LCTRL>
