@@ -29,6 +29,7 @@
       compatible = "zmk,behavior-macro";
       label = "macro_nextab";
       #binding-cells = <0>;
+      wait-ms = <20>;
       bindings
         = <&macro_press &kp LCTRL>
         , <&macro_tap &kp TAB>
@@ -40,6 +41,7 @@
       compatible = "zmk,behavior-macro";
       label = "macro_prvtab";
       #binding-cells = <0>;
+      wait-ms = <20>;
       bindings
         = <&macro_press &kp LCTRL>
         , <&macro_press &kp LSHIFT>
@@ -51,23 +53,33 @@
   };
 
   behaviors {
-    mt_bspc: modtap_delword_bspc {
+    ht: hold_tap {
       compatible = "zmk,behavior-hold-tap";
-      label = "modtap_delword_bspc";
+      label = "hold_tap";
       #binding-cells = <2>;
-      tapping-term-ms = <200>;
-      quick_tap_ms = <0>;
+      tapping-term-ms = <250>;
+      quick-tap-ms = <100>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
+    };
+    
+    ht_bspc: ht_delword_bspc {
+      compatible = "zmk,behavior-hold-tap";
+      label = "ht_delword_bspc";
+      #binding-cells = <2>;
+      tapping-term-ms = <500>;
+      quick_tap_ms = <100>;
       flavor = "tap-preferred";
       bindings = <&del_word>, <&kp>;
     };
 
-    td_bspc: tapdance_bspc {
-      compatible = "zmk,behavior-tap-dance";
-      label = "tapdance_bspc";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&kp BSPC>, <&del_word>;
-    };
+    // td_bspc: tapdance_bspc {
+    //   compatible = "zmk,behavior-tap-dance";
+    //   label = "tapdance_bspc";
+    //   #binding-cells = <0>;
+    //   tapping-term-ms = <200>;
+    //   bindings = <&kp BSPC>, <&del_word>;
+    // };
   };
 
   keymap {
@@ -75,18 +87,18 @@
 
     default_layer {
       bindings = <
-        &mt ESC Q  &mt GRAVE W  &mt TAB E  &kp R  &kp T  &kp Y   &kp U  &mt TAB I  &kp O  &mt DEL P
-        &mt LSHIFT A &mt LALT S &mt LCTRL D &mt LGUI F &mt CAPS G &mt CAPS SQT &mt RGUI H &mt RCTRL J &mt RALT K &mt RSHIFT L
+        &ht ESC Q  &ht GRAVE W  &ht TAB E  &kp R  &kp T  &kp Y   &kp U  &ht TAB I  &kp O  &ht DEL P
+        &ht LSHIFT A &ht LCTRL S &ht LALT D &ht LGUI F &ht CAPS G &ht CAPS SQT &ht RGUI H &ht RALT J &ht RCTRL K &ht RSHIFT L
         &kp Z &kp X &kp C &kp V &kp COMMA &kp DOT &kp B &kp N &kp M &kp FSLH
-        &lt NAV TAB &kp SPACE &mt_bspc 0 BSPC &lt SYM LS(TAB)
+        &lt SYM TAB &kp SPACE &ht_bspc 0 BSPC &lt NAV LS(TAB)
       >;
     };
 
     symbol_layer {
       bindings = <
         // esc, grave, tab, n0-9, [, ], -, =, |, wasd,
-        &kp GRAVE &kp TAB &none &none &none &none &none &none &none &kp DEL
-        &mt LSHIFT N5 &mt LALT N6 &mt LCTRL N7 &mt LGUI N8 &mt CAPS N9 &mt CAPS N0 &mt RGUI N1 &mt RCTRL N2 &mt RALT N3 &mt RSHIFT N4
+        &kp GRAVE &kp TAB &none &none &none &n  one &none &none &none &kp DEL
+        &ht LSHIFT N5 &ht LALT N6 &ht LCTRL N7 &ht LGUI N8 &ht CAPS N9 &ht CAPS N0 &ht RGUI N1 &ht RCTRL N2 &ht RALT N3 &ht RSHIFT N4
         &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp N1 &kp N2 &kp N3 &kp N4
         &trans &trans &trans &trans
       >;
