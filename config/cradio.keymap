@@ -95,8 +95,8 @@
     };
 
     symbol_layer {
+      // esc, grave, tab, n0-9, [, ], -, =, |, wasd,
       bindings = <
-        // esc, grave, tab, n0-9, [, ], -, =, |, wasd,
         &kp GRAVE &kp TAB &none &none &none &n  one &none &none &none &kp DEL
         &ht LSHIFT N5 &ht LALT N6 &ht LCTRL N7 &ht LGUI N8 &ht CAPS N9 &ht CAPS N0 &ht RGUI N1 &ht RCTRL N2 &ht RALT N3 &ht RSHIFT N4
         &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp N1 &kp N2 &kp N3 &kp N4
