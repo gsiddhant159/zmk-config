@@ -1,18 +1,46 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+
+//                KEY POSITIONS
+// 
+//          ╭────────────────────╮ ╭────────────────────╮
+//          │  0   1   2   3   4 │ │  5   6   7   8   9 │
+//          │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
+//          │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
+//          ╰──────────╮  30  31 │ │ 32  33  ╭──────────╯
+//                     ╰─────────╯ ╰─────────╯           
+// 
 
 #define DEFAULT 0
 #define SYM 1
 #define NAV 2
 
 / {
+  combos {
+    compatible = "zmk,combos";
+
+    combo_esc {
+      timeout-ms = <50>;
+      // key-positions = <2 3>;
+      key-positions = <22 23>;
+      bindings = <&kp ESC>;
+    };
+
+    combo_entr {
+      timeout-ms = <50>;
+      // key-positions = <6 7>;
+      key-positions = <26 27>;      
+      bindings = <&kp ENTER>;
+    };
+
+    combo_default {
+      timeout-ms = <50>;
+      key-positions = <31 32>;      
+      bindings = <&to DEFAULT>;
+    };
+  };
+
   macros {
     del_word: macro_del_word {
       compatible = "zmk,behavior-macro";
@@ -44,42 +72,100 @@
       wait-ms = <20>;
       bindings
         = <&macro_press &kp LCTRL>
-        , <&macro_press &kp LSHIFT>
+        , <&macro_press &kp LSHFT>
         , <&macro_tap &kp TAB>
-        , <&macro_release &kp LSHIFT>
+        , <&macro_release &kp LSHFT>
         , <&macro_release &kp LCTRL>
         ;
     };
+
+    // nextab: macro_nextab {
+    //   compatible = "zmk,behavior-macro";
+    //   label = "macro_nextab";
+    //   #binding-cells = <0>;
+    //   wait-ms = <20>;
+    //   bindings
+    //     = <&macro_press &kp LALT>
+    //     , <&macro_press &kp LCMD>
+    //     , <&macro_tap &kp RIGHT>
+    //     , <&macro_release &kp LCMD>
+    //     , <&macro_release &kp LALT>
+    //     ;
+    // };
+
+    // prvtab: macro_prvtab {
+    //   compatible = "zmk,behavior-macro";
+    //   label = "macro_prvtab";
+    //   #binding-cells = <0>;
+    //   wait-ms = <20>;
+    //   bindings
+    //     = <&macro_press &kp LALT>
+    //     , <&macro_press &kp LCMD>
+    //     , <&macro_tap &kp LEFT>
+    //     , <&macro_release &kp LCMD>
+    //     , <&macro_release &kp LALT>
+    //     ;
+    // };
   };
 
   behaviors {
-    ht: hold_tap {
+    // Hold-Taps (hold -> first binding)
+    ht_bspc: delword_bspc {
       compatible = "zmk,behavior-hold-tap";
-      label = "hold_tap";
+      label = "delword_bspc";
       #binding-cells = <2>;
       tapping-term-ms = <250>;
-      quick-tap-ms = <100>;
-      flavor = "balanced";
-      bindings = <&kp>, <&kp>;
-    };
-    
-    ht_bspc: ht_delword_bspc {
-      compatible = "zmk,behavior-hold-tap";
-      label = "ht_delword_bspc";
-      #binding-cells = <2>;
-      tapping-term-ms = <500>;
-      quick-tap-ms = <100>;
+      quick-tap-ms = <0>;
       flavor = "tap-preferred";
       bindings = <&del_word>, <&kp>;
     };
 
-    // td_bspc: tapdance_bspc {
-    //   compatible = "zmk,behavior-tap-dance";
-    //   label = "tapdance_bspc";
-    //   #binding-cells = <0>;
-    //   tapping-term-ms = <200>;
-    //   bindings = <&kp BSPC>, <&del_word>;
-    // };
+    lh: layer_hold {
+      compatible = "zmk,behavior-hold-tap";
+      label = "layer_hold";
+      #binding-cells = <2>;
+      tapping-term-ms = <250>;
+      flavor = "hold-preferred";
+      bindings = <&mo>, <&to>;
+    };
+
+    hm: home_modtap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "home_modtap";
+      #binding-cells = <2>;
+      tapping-term-ms = <250>;
+      quick-tap-ms = <175>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+    
+    nav: navigation_holdtap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "navigation_holdtap";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <175>;
+      global-quick-tap;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    }
+
+    // Mod-Morphs (no mod -> first binding)
+    comma_: comma_semicolon{
+      compatible = "zmk,behavior-mod-morph";
+      label = "comma_semicolon";
+      #binding-cells = <0>;
+      bindings = <&kp COMMA>, <&kp SEMI>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    dot_: dot_colon{
+      compatible = "zmk,behavior-mod-morph";
+      label = "dot_colon";
+      #binding-cells = <0>;
+      bindings = <&kp DOT>, <&kp COLON>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
   };
 
   keymap {
@@ -87,30 +173,38 @@
 
     default_layer {
       bindings = <
-        &ht ESC Q  &ht GRAVE W  &ht TAB E  &kp R  &kp T  &kp Y   &kp U  &ht TAB I  &kp O  &ht DEL P
-        &ht LSHIFT A &ht LCTRL S &ht LALT D &ht LGUI F &ht CAPS G &ht CAPS SQT &ht RGUI H &ht RALT J &ht RCTRL K &ht RSHIFT L
-        &kp Z &kp X &kp C &kp V &kp COMMA &kp DOT &kp B &kp N &kp M &kp FSLH
-        &lt SYM TAB &kp SPACE &ht_bspc 0 BSPC &lt NAV LS(TAB)
+        &kp SQT     &kp W       &kp F      &kp M       &comma_         &dot_           &kp N      &kp O      &kp U       &hm DEL Q
+        &hm LSHFT I &hm LCTRL R &hm LALT S &hm LGUI T  &kp D           &kp P           &hm RGUI L &hm RALT A &hm RCTRL E &hm RSHFT K
+        &kp Z       &kp X       &kp C      &kp V       &kp B           &kp Y           &kp G      &kp H      &kp J       &kp FSLH
+                                           &lh NAV NAV &hm LSHFT SPACE &ht_bspc 0 BSPC &lh SYM SYM
       >;
     };
 
+    // qwerty_layer {
+    //   bindings = <
+    //     &kp Q &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &hm DEL P
+    //     &hm LSHFT A &hm LCTRL S &hm LALT D &hm LGUI F &kp G &kp SQT &hm RGUI H &hm RALT J &hm RCTRL K &hm RSHFT L
+    //     &kp Z &kp X &kp C &kp V &comma_ &dot_ &kp B &kp N &kp M &kp FSLH
+    //     &lh NAV NAV &hm LSHFT SPACE &ht_bspc 0 BSPC &lh SYM SYM
+    //   >;
+    // };
+
     symbol_layer {
-      // esc, grave, tab, n0-9, [, ], -, =, |, wasd,
       bindings = <
-        &kp GRAVE &kp TAB &none &none &none &none &none &none &none &kp DEL
-        &ht LSHIFT N5 &ht LALT N6 &ht LCTRL N7 &ht LGUI N8 &ht CAPS N9 &ht CAPS N0 &ht RGUI N1 &ht RCTRL N2 &ht RALT N3 &ht RSHIFT N4
-        &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp N1 &kp N2 &kp N3 &kp N4
-        &trans &trans &trans &trans
+        &none        &none        &kp UNDER   &kp MINUS   &kp GRAVE &kp BSLH &kp PLUS    &kp EQUAL   &none        &none
+        &hm LSHFT N5 &hm LCTRL N6 &hm LALT N7 &hm LGUI N8 &kp N9    &kp N0   &hm RGUI N1 &hm RALT N2 &hm RCTRL N3 &hm RSHFT N4
+        &none        &kp LBRC     &kp LBKT    &kp LPAR    &kp LT    &kp GT   &kp RPAR    &kp RBKT    &kp RBRC     &none
+                                              &trans      &trans    &trans   &trans
       >;
     };
 
     navigation_layer {
       bindings = <
-        &bt BT_NXT  &prvtab   &kp UP  &nextab &none &none &none &none &none &none
-        &bt BT_PRV  &kp LEFT     &kp DOWN   &kp RIGHT  &none &none &none &none &none &none
-        &bt BT_CLR  &none     &none   &none   &none &none &none &none &none &reset
+        &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none &none  &prvtab &hm PG_UP UP &nextab &none &none
+        &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none &hm HOME LEFT &hm PG_DOWN DOWN &hm END RIGHT &none
+        &bootloader &reset &bt BT_PRV &bt BT_NXT &bt BT_CLR &none &none &none &none &none
         &trans &trans &trans &trans
-      >;
+     >;
     };
   };
 };
