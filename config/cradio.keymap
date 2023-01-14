@@ -200,8 +200,8 @@
 
     navigation_layer {
       bindings = <
-        &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none      &none  &none         &hm PG_UP UP     &none         &none
-        &kp LSHFT    &kp LCTRL    &kp LALT     &kp LGUI     &none      &none  &hm HOME LEFT &hm PG_DOWN DOWN &hm END RIGHT &none
+        &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none      &none  &none         &kp UP     &none         &none
+        &kp LSHFT    &kp LCTRL    &kp LALT     &kp LGUI     &kp CAPS   &none  &kp LEFT      &kp DOWN   &kp RIGHT     &none
         &bootloader  &reset       &bt BT_PRV   &bt BT_NXT   &bt BT_CLR &none  &none         &none            &reset        &bootloader
                                                &trans       &trans     &trans &trans
      >;
