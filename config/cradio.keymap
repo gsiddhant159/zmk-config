@@ -148,7 +148,7 @@
       global-quick-tap;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
-    }
+    };
 
     // Mod-Morphs (no mod -> first binding)
     comma_: comma_semicolon{
@@ -200,10 +200,10 @@
 
     navigation_layer {
       bindings = <
-        &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none &none  &prvtab &hm PG_UP UP &nextab &none &none
-        &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none &hm HOME LEFT &hm PG_DOWN DOWN &hm END RIGHT &none
-        &bootloader &reset &bt BT_PRV &bt BT_NXT &bt BT_CLR &none &none &none &none &none
-        &trans &trans &trans &trans
+        &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none      &none  &prvtab       &hm PG_UP UP     &nextab       &none
+        &kp LSHFT    &kp LCTRL    &kp LALT     &kp LGUI     &none      &none  &hm HOME LEFT &hm PG_DOWN DOWN &hm END RIGHT &none
+        &bootloader  &reset       &bt BT_PRV   &bt BT_NXT   &bt BT_CLR &none  &none         &none            &none         &none
+                                               &trans       &trans     &trans &trans
      >;
     };
   };
