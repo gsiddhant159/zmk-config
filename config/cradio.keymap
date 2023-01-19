@@ -155,8 +155,8 @@
       compatible = "zmk,behavior-mod-morph";
       label = "comma_semicolon";
       #binding-cells = <0>;
-      bindings = <&kp COMMA>, <&kp SEMI>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
+      bindings = <&kp COMMA>, <&kp SEMI>;
     };
 
     dot_: dot_colon{
@@ -173,9 +173,9 @@
 
     default_layer {
       bindings = <
-        &kp SQT     &kp W       &kp F      &kp M       &comma_         &dot_           &kp N      &kp O      &kp U       &hm DEL Q
-        &hm LSHFT I &hm LCTRL R &hm LALT S &hm LGUI T  &kp D           &kp P           &hm RGUI L &hm RALT A &hm RCTRL E &hm RSHFT K
-        &kp Z       &kp X       &kp C      &kp V       &kp B           &kp Y           &kp G      &kp H      &kp J       &kp FSLH
+        &kp SQT     &kp W       &kp M      &kp F       &comma_         &dot_           &kp G      &kp O      &kp U       &hm DEL Q
+        &hm LSHFT I &hm LCTRL R &hm LALT S &hm LGUI T  &hm TAB D       &hm TAB P       &hm RGUI N &hm RALT A &hm RCTRL E &hm RSHFT K
+        &kp Z       &kp X       &kp C      &kp V       &kp B           &kp Y           &kp L      &kp H      &kp J       &kp FSLH
                                            &lh NAV NAV &hm LSHFT SPACE &ht_bspc 0 BSPC &lh SYM SYM
       >;
     };
