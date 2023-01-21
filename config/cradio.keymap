@@ -163,8 +163,15 @@
       compatible = "zmk,behavior-mod-morph";
       label = "dot_colon";
       #binding-cells = <0>;
-      bindings = <&kp DOT>, <&kp COLON>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
+      bindings = <&kp DOT>, <&kp COLON>;
+    };
+
+    spcbspc: space_backspace{
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+      bindings = <&kp SPACE>, <&kp BSPC>;
     };
   };
 
@@ -176,7 +183,7 @@
         &kp SQT     &kp W       &kp M      &kp G       &comma_         &dot_           &kp F      &kp O      &kp U       &hm DEL Q
         &hm LSHFT I &hm LCTRL R &hm LALT S &hm LGUI T  &hm TAB D       &hm TAB P       &hm RGUI N &hm RALT A &hm RCTRL E &hm RSHFT K
         &kp Z       &kp X       &kp C      &kp V       &kp B           &kp Y           &kp L      &kp H      &kp J       &kp FSLH
-                                           &lh NAV NAV &hm LSHFT SPACE &ht_bspc 0 BSPC &lh SYM SYM
+                                           &lh NAV NAV &spcbspc        &kp LSHIFT      &lh SYM SYM
       >;
     };
 
