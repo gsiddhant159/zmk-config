@@ -153,7 +153,7 @@
     // Mod-Morphs (no mod -> first binding)
     comma_: comma_semicolon{
       compatible = "zmk,behavior-mod-morph";
-      label = "comma_semicolon";
+      label = "comma^semicolon";
       #binding-cells = <0>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
       bindings = <&kp COMMA>, <&kp SEMI>;
@@ -161,7 +161,7 @@
 
     dot_: dot_colon{
       compatible = "zmk,behavior-mod-morph";
-      label = "dot_colon";
+      label = "dot^colon";
       #binding-cells = <0>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
       bindings = <&kp DOT>, <&kp COLON>;
@@ -169,6 +169,7 @@
 
     spcbspc: space_backspace{
       compatible = "zmk,behavior-mod-morph";
+      label = "space^backspace";
       #binding-cells = <0>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
       bindings = <&kp SPACE>, <&kp BSPC>;
