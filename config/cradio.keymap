@@ -180,9 +180,9 @@
 
     default_layer {
       bindings = <
-        &kp SQT     &kp W       &kp M      &kp G       &comma_         &dot_           &kp F      &kp O      &kp U       &hm DEL Q
+        &kp SQT     &kp W       &kp H      &kp G       &comma_         &dot_           &kp F      &kp O      &kp U       &hm DEL Q
         &hm LSHFT I &hm LCTRL R &hm LALT S &hm LGUI T  &hm TAB D       &hm TAB P       &hm RGUI N &hm RALT A &hm RCTRL E &hm RSHFT K
-        &kp Z       &kp X       &kp C      &kp V       &kp B           &kp Y           &kp L      &kp H      &kp J       &kp FSLH
+        &kp Z       &kp X       &kp C      &kp V       &kp B           &kp Y           &kp L      &kp M      &kp J       &kp FSLH
                                            &lh NAV NAV &spcbspc        &kp LSHIFT      &lh SYM SYM
       >;
     };
