@@ -16,6 +16,10 @@
 #define SYM 1
 #define NAV 2
 
+#define QTms 175
+#define TTms TTms
+
+
 / {
   combos {
     compatible = "zmk,combos";
@@ -114,8 +118,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "delword_bspc";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
-      quick-tap-ms = <0>;
+      tapping-term-ms = <TTms>;
+      quick-tap-ms = <QTms>;
       flavor = "tap-preferred";
       bindings = <&del_word>, <&kp>;
     };
@@ -124,7 +128,7 @@
       compatible = "zmk,behavior-hold-tap";
       label = "layer_hold";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
+      tapping-term-ms = <TTms>;
       flavor = "hold-preferred";
       bindings = <&mo>, <&tog>;
     };
@@ -133,8 +137,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "home_modtap";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
-      quick-tap-ms = <175>;
+      tapping-term-ms = <TTms>;
+      quick-tap-ms = <QTms>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
@@ -143,8 +147,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "navigation_holdtap";
       #binding-cells = <2>;
-      tapping-term-ms = <500>;
-      quick-tap-ms = <175>;
+      tapping-term-ms = <(2*TTms)>;
+      quick-tap-ms = <QTms>;
       global-quick-tap;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
@@ -178,13 +182,12 @@
 
   keymap {
     compatible = "zmk,keymap";
-
     default_layer {
       bindings = <
-        &kp SQT     &kp W       &kp H      &kp G       &comma_         &dot_           &kp F      &kp O      &kp U       &hm DEL Q
-        &hm LSHFT I &hm LCTRL R &hm LALT S &hm LGUI T  &hm TAB D       &hm TAB P       &hm RGUI N &hm RALT A &hm RCTRL E &hm RSHFT K
-        &kp Z       &kp X       &kp C      &kp V       &kp B           &kp Y           &kp L      &kp M      &kp J       &kp FSLH
-                                           &lh NAV NAV &spcbspc        &kp LSHIFT      &lh SYM SYM
+        &kp SQT     &kp W       &kp M      &kp G       &kp J      &kp K           &kp F      &kp O      &kp U       &hm DEL Q
+        &hm LSHFT I &hm LCTRL R &hm LALT S &hm LGUI T  &hm TAB D  &hm TAB P       &hm RGUI N &hm RALT A &hm RCTRL E &hm RSHFT H
+        &kp Z       &kp X       &kp C      &kp V       &kp Y      &kp B           &kp L      &dot_      &comma_    &kp FSLH
+                                           &lh NAV NAV &kp SPACE  &ht_bspc 0 BSPC &lh SYM SYM
       >;
     };
 
